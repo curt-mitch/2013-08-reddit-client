@@ -5,7 +5,7 @@
   <title>my Angular App</title>
 </head>
 <body>
-<h1>Hi</h1>
+<h1>Reddit</h1>
 
   <script type="text/javascript" src="js/vendor/angular/angular.js"></script>
   <script type="text/javascript" src="js/vendor/angular-route/angular-route.js"></script>
@@ -16,7 +16,7 @@
   <script type="text/javascript" src="js/filters.js"></script>
   <div ng-controller="MainController">
     <ul>
-      <li ng-repeat="item in news"><img src='{{item.data.thumbnail}}'/></li>
+      <li ng-repeat="item in news"><img src='{{item.data.thumbnail}}'/>{{item.data.title}}</li>
     </ul>
   </div>
 </body>
