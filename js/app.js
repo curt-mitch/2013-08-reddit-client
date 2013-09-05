@@ -1,11 +1,11 @@
-angular.module('myApp', ['ngRoute', 'myApp.controllers'])
+angular.module('myApp', ['ngRoute', 'myApp.controllers', 'myApp.services'])
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
     templateUrl: 'templates/home.html',
     controller: 'MainController'
   })
   .when('/login', {
-    template: '<h1>Login</h1>',
+    templateUrl: 'templates/login.html',
     controller: 'LoginController'
   })
   .otherwise({redirectTo: '/'});

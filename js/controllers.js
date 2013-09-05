@@ -1,7 +1,7 @@
 var redditUrl = 'http://www.reddit.com/r/pics.json';
 
 angular.module('myApp.controllers', [])
-.controller('MainController', function($scope, $http) {
+.controller('MainController', ['$scope', '$http', 'redditService', function($scope, $http, redditService) {
   $scope.add = function(item) {
     if (item.hasOwnProperty("counter")) {
       item.counter++;
@@ -16,13 +16,10 @@ angular.module('myApp.controllers', [])
       item.counter = 0;
     }
   };
-  $http({
-    method: 'JSONP',
-    url: redditUrl + '?jsonp=JSON_CALLBACK'
-  }).success(function(data, status){
+  redditService.getNews().success(function(data) {
     $scope.news = data.data.children;
   });
-})
+}])
 .controller('LoginController', function($scope, $http) {
   $scope.login = "Login here";
 });
