@@ -14,11 +14,9 @@
   <script type="text/javascript" src="js/services.js"></script>
   <script type="text/javascript" src="js/directives.js"></script>
   <script type="text/javascript" src="js/filters.js"></script>
-  <div ng-controller="MainController">
-    <ul>
-      <li ng-repeat="item in news">{{item.counter}}<button ng-click='add(item)' class='button'>Upvote</button><button ng-click='subtract(item)' class='button'>Downvote</button><img src='{{item.data.thumbnail}}'/>{{item.data.title}}</li>
-    </ul>
-  </div>
+<div class="content">
+  <div ng-view></div>
+</div>
 </body>
 </html>
 

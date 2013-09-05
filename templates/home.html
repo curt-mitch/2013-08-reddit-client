@@ -1,3 +1,7 @@
 <h2>Home template</h2>
 
-<!-- Fill in our news data here -->
+  <div ng-controller="MainController">
+    <ul>
+      <li ng-repeat="item in news">{{item.counter}}<button ng-click='add(item)' class='button'>Upvote</button><button ng-click='subtract(item)' class='button'>Downvote</button><img src='{{item.data.thumbnail}}'/>{{item.data.title}}</li>
+    </ul>
+  </div>
